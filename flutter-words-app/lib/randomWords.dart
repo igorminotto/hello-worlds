@@ -37,15 +37,13 @@ class _RandomWordsState extends State<RandomWords> {
   }
 
   Widget _buildSuggestions() {
-    return ListView.builder(
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        childAspectRatio: 2.5,
+      ),
       padding: const EdgeInsets.all(16),
-      itemBuilder: (BuildContext _context, int i) {
-        if (i.isOdd) {
-          return Divider();
-        }
-
-        final int index = i ~/ 2;
-
+      itemBuilder: (BuildContext _context, int index) {
         if (index >= _suggestions.length) {
           _suggestions.addAll(generateWordPairs().take(10));
         }
@@ -58,20 +56,22 @@ class _RandomWordsState extends State<RandomWords> {
   Widget _buildRow(WordPair pair) {
     final bool alreadySaved = _saved.contains(pair);
 
-    return ListTile(
-      title: Text(
-        pair.asPascalCase,
-        style: biggerFont,
+    return Card(
+      child: ListTile(
+        title: Text(
+          pair.asPascalCase,
+          style: biggerFont,
+        ),
+        trailing: Icon(
+          alreadySaved ? Icons.favorite : Icons.favorite_border,
+          color: alreadySaved ? Colors.red[300] : null,
+        ),
+        onTap: () {
+          setState(() {
+            alreadySaved ? _saved.remove(pair) : _saved.add(pair);
+          });
+        },
       ),
-      trailing: Icon(
-        alreadySaved ? Icons.favorite : Icons.favorite_border,
-        color: alreadySaved ? Colors.red : null,
-      ),
-      onTap: () {
-        setState(() {
-          alreadySaved ? _saved.remove(pair) : _saved.add(pair);
-        });
-      }, 
     );
   }
 }
