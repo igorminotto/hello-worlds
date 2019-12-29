@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'package:random_words/wordsList.dart';
 
-import 'textStyles.dart';
+import 'styles/textStyles.dart';
 
 class RandomWords extends StatefulWidget {
   @override

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
-import 'textStyles.dart';
+import 'styles/textStyles.dart';
 
 class WordsList extends StatelessWidget {
   final Set<WordPair> words;
