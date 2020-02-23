@@ -18,8 +18,8 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "prerepl": "npm run build",
-    "repl": "node dist/repl"
+    "preconsole": "npm run build",
+    "console": "node dist/repl"
   },
   "dependencies": {
     "@nestjs/common": "^6.10.14",
