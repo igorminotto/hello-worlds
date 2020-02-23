@@ -6,7 +6,7 @@ import * as repl from 'repl';
 (_ => {
   const nestAppPromise = NestFactory.createApplicationContext(AppModule)
   const replOptions = { 
-    prompt: ' nest.js '.bgBlue.bold + ''.blue + ' ',
+    prompt: ` ${AppModule.APP_NAME} `.bgBlue.bold + ''.blue + ' ',
     useColors: true,
   }
 
