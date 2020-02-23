@@ -6,6 +6,9 @@ const config = {
     "password": process.env.DATABASE_PASSWORD || "1234",
     "database": process.env.DATABASE_SCHEMA || "nestjs",
     "entities": ["dist/**/*.entity{.ts,.js}"],
-    "synchronize": true
+    "synchronize": true,
+    "cli": {
+        "migrationsDir": "src/migration"
+    },
 };
 module.exports = config;
