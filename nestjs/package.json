@@ -45,8 +45,6 @@
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-import": "^2.19.1",
     "jest": "^24.9.0",
-    "pre-commit": "^1.2.2",
-    "pre-push": "^0.1.1",
     "prettier": "^1.18.2",
     "supertest": "^4.0.2",
     "ts-jest": "25.2.0",
@@ -68,7 +66,5 @@
     },
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  },
-  "pre-commit": ["format"],
-  "pre-push": ["build"]
+  }
 }
