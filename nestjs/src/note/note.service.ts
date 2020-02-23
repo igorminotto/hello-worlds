@@ -1,15 +1,15 @@
 import { Injectable } from '@nestjs/common';
-import { Note } from './note.interface';
+import { NoteDTO } from './dto/note.dto';
 
 @Injectable()
 export class NoteService {
-  private readonly notes: Note[] = [];
+  private readonly notes: NoteDTO[] = [];
 
-  public create(note: Note) {
+  public create(note: NoteDTO) {
     this.notes.push(note);
   }
 
-  public findAll(): Note[] {
+  public findAll(): NoteDTO[] {
     return this.notes;
   }
 }

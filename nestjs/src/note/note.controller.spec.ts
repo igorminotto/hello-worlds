@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { NoteController } from './note.controller';
 import { NoteService } from './note.service';
-import { Note } from './note.interface';
+import { NoteDTO } from './dto/note.dto';
 
 describe('Note Controller', () => {
   let service: NoteService;
@@ -22,14 +22,14 @@ describe('Note Controller', () => {
   });
 
   describe('findAll', () => {
-    let note = { title: 'A', body: 'aaaa' };
+    const note = new NoteDTO({ title: 'A', body: 'aaaa' });
 
     beforeEach(async () => {
       service.create(note);
     });
 
     it('should return an array of notes', async () => {
-      expect(await controller.findAll()).toStrictEqual<Note[]>([note]);
+      expect(await controller.findAll()).toStrictEqual([note]);
     });
   });
 });

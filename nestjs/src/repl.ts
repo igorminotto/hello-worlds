@@ -3,7 +3,7 @@ import { AppModule } from './app/app.module';
 import * as colors from 'colors';
 import * as repl from 'repl';
 
-(_ => {
+(() => {
   const nestAppPromise = NestFactory.createApplicationContext(AppModule);
   const replOptions = {
     prompt: ` ${AppModule.APP_NAME} `.bgBlue.bold + ''.blue + ' ',
