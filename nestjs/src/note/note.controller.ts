@@ -4,15 +4,15 @@ import { Note } from './note.interface';
 
 @Controller('note')
 export class NoteController {
-    constructor(private readonly noteService: NoteService) {}
+  constructor(private readonly noteService: NoteService) {}
 
-    @Post()
-    public create(@Body() note: Note) {
-        this.noteService.create(note);
-    }
+  @Post()
+  public create(@Body() note: Note) {
+    this.noteService.create(note);
+  }
 
-    @Get()
-    public findAll(): Note[] {
-        return this.noteService.findAll();
-    }
+  @Get()
+  public findAll(): Note[] {
+    return this.noteService.findAll();
+  }
 }

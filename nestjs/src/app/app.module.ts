@@ -5,5 +5,5 @@ import { NoteModule } from '../note/note.module';
   imports: [NoteModule],
 })
 export class AppModule {
-  static readonly APP_NAME = 'my-app'
+  static readonly APP_NAME = 'my-app';
 }
