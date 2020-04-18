@@ -2,11 +2,12 @@ import React from "react";
 import { useAuth } from "../hooks/authHooks";
 
 function AuthBar() {
-  const { isLogged, login, logout } = useAuth();
+  const { user, isLogged, login, logout } = useAuth();
 
   return (
     <div>
       <h2>Logged? {isLogged ? "Yes" : "No"}</h2>
+      <h3>User: {user?.name}</h3>
 
       {isLogged ? (
         <button onClick={logout}>logout</button>
